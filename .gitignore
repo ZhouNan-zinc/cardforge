@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/cards/*.json
+!data/cards/.gitkeep
+results/*
+!results/.gitkeep
+*.log
+.DS_Store
+
+# final report deliverables
+report/
+
+# submission excludes: local experiment docs and report
+report/
+docs/
+
+# local workspace configuration
+config/

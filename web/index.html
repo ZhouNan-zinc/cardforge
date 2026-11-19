@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>霜旋手记 · 雪原卡牌行记</title>
+    <link rel="stylesheet" href="/static/style.css?v=20261111e" />
+  </head>
+  <body>
+    <img class="bg-mascot" src="/static/mascot.svg" alt="" aria-hidden="true" />
+    <div class="bubbles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo"><img src="/static/mascot.svg" alt="" /></div>
+        <div>
+          <h1>霜旋手记</h1>
+          <p>雪原卡牌行记</p>
+        </div>
+      </div>
+      <div class="theme-bar">
+        <input id="theme" value="霜旋" maxlength="120" />
+        <button id="generate" class="primary">重绘牌组</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="map-board" id="map-board" hidden></section>
+
+      <section class="battle">
+        <article class="combatant player" id="player-panel">
+          <div class="portrait"><img id="player-portrait" src="/static/art/player1.png" alt="" /></div>
+          <div class="combatant-body">
+            <div class="combatant-head">
+              <h2 id="player-name">你</h2>
+              <span class="you-badge">你</span>
+              <span class="badge" id="player-energy">⚡ 3 / 3</span>
+            </div>
+            <div class="hp-bar"><div class="hp-fill" id="player-hp-fill"></div></div>
+            <div class="stats-row">
+              <span id="player-hp">30 / 30</span>
+              <span id="player-block">🛡 0</span>
+              <span id="player-status"></span>
+            </div>
+          </div>
+        </article>
+
+        <div class="center">
+          <div class="run-strip" id="run-info">第 1/3 战 · 牌组 12 · HP 30/30</div>
+          <div class="route-history" id="route-history"></div>
+          <div class="objective-strip" id="objectives"></div>
+          <div class="turn-info" id="turn-info">准备中…</div>
+          <div class="log" id="log"></div>
+        </div>
+
+        <article class="combatant enemy" id="enemy-panel">
+          <div class="portrait"><img id="enemy-portrait" src="/static/art/enemy1.png" alt="" /></div>
+          <div class="combatant-body">
+            <div class="combatant-head">
+              <h2 id="enemy-name">霜原噬影</h2>
+              <span class="elite-badge" id="enemy-elite" hidden>精英</span>
+              <span class="phase-badge" id="enemy-phase" hidden>阶段 2</span>
+              <span class="intent-badge" id="enemy-intent">意图：—</span>
+            </div>
+            <div class="hp-bar"><div class="hp-fill" id="enemy-hp-fill"></div></div>
+            <div class="stats-row">
+              <span id="enemy-hp">30 / 30</span>
+              <span id="enemy-block">🛡 0</span>
+              <span id="enemy-status"></span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="hand-section">
+        <div class="section-head">
+          <h2>手中牌</h2>
+          <div class="actions">
+            <button id="end-turn">收手</button>
+            <button id="new-game">新的一局</button>
+          </div>
+        </div>
+        <div class="cost-legend">
+          <span><i class="cost-dot attack"></i>红圈 = 攻击牌费用</span>
+          <span><i class="cost-dot skill"></i>蓝圈 = 技能牌费用</span>
+          <span><i class="cost-dot power"></i>紫圈 = 能力牌费用</span>
+          <span class="muted">右上角数字 = 需要消耗的能量</span>
+        </div>
+        <div class="utility-row">
+          <div class="potion-bar" id="potions"></div>
+          <div class="pile-info" id="pile-info"></div>
+          <button id="view-deck" class="ghost">查看牌组</button>
+        </div>
+        <div class="deck-panel" id="deck-panel" hidden></div>
+        <div class="burst-panel">
+          <div class="burst-title">旋力 · 同元素 3 张触发</div>
+          <div class="burst-elements">
+            <div class="burst el-ice"><span>❄ 冰</span><div class="pips" id="burst-ice"></div><b id="count-ice">0/3</b></div>
+            <div class="burst el-wind"><span>🌪 风</span><div class="pips" id="burst-wind"></div><b id="count-wind">0/3</b></div>
+            <div class="burst el-dragon"><span>🐉 龙</span><div class="pips" id="burst-dragon"></div><b id="count-dragon">0/3</b></div>
+          </div>
+        </div>
+        <div class="reward-banner" id="reward-banner" hidden></div>
+        <div class="hand" id="hand"></div>
+      </section>
+
+      <section class="lab">
+        <div class="lab-head">
+          <div>
+            <h2>牌谱研习</h2>
+            <p id="card-set-meta">载入中…</p>
+          </div>
+          <div class="actions">
+            <button id="simulate">推演 300 局</button>
+            <button id="balance">校准牌组</button>
+            <button id="art-prompts">卡面画稿</button>
+          </div>
+        </div>
+        <div class="stats" id="stats"></div>
+        <div class="art-prompts" id="art-prompts-panel" hidden></div>
+        <div class="gallery" id="card-gallery"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span>霜旋手记 · 课程项目</span>
+      <span>雪原行记</span>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+    <script src="/static/app.js?v=20261111e"></script>
+  </body>
+</html>

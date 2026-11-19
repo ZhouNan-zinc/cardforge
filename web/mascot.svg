@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="小雪鼬 mascot">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#123f5c"/>
+      <stop offset="100%" stop-color="#04101d"/>
+    </radialGradient>
+    <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#dff8ff"/>
+      <stop offset="100%" stop-color="#9fe8ff"/>
+    </linearGradient>
+    <linearGradient id="scarf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b8fb3"/>
+      <stop offset="100%" stop-color="#8ff3ff"/>
+    </linearGradient>
+    <linearGradient id="ear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9fe8ff"/>
+      <stop offset="100%" stop-color="#4cc9f0"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#bg)" stroke="#8ff3ff" stroke-opacity=".45" stroke-width="2"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#8ff3ff" stroke-opacity=".18" stroke-dasharray="3 7"/>
+  <!-- ears -->
+  <path d="M48 72 L40 30 Q58 34 70 48 Z" fill="url(#ear)"/>
+  <path d="M152 72 L160 30 Q142 34 130 48 Z" fill="url(#ear)"/>
+  <path d="M53 66 L48 42 Q58 46 64 54 Z" fill="#0b2b45" opacity=".55"/>
+  <path d="M147 66 L152 42 Q142 46 136 54 Z" fill="#0b2b45" opacity=".55"/>
+  <!-- head -->
+  <path d="M42 104 Q42 56 100 52 Q158 56 158 104 Q158 148 100 160 Q42 148 42 104 Z" fill="url(#fur)"/>
+  <!-- cheek tufts -->
+  <path d="M44 108 Q26 118 34 132 Q46 128 52 118 Z" fill="#dff8ff"/>
+  <path d="M156 108 Q174 118 166 132 Q154 128 148 118 Z" fill="#dff8ff"/>
+  <!-- eyes -->
+  <ellipse cx="76" cy="100" rx="10" ry="13" fill="#061826"/>
+  <ellipse cx="124" cy="100" rx="10" ry="13" fill="#061826"/>
+  <circle cx="79" cy="96" r="3.2" fill="#ffffff"/>
+  <circle cx="127" cy="96" r="3.2" fill="#ffffff"/>
+  <!-- muzzle -->
+  <ellipse cx="100" cy="126" rx="26" ry="17" fill="#ffffff"/>
+  <path d="M100 118 L92 126 L100 132 L108 126 Z" fill="#ff8fb3"/>
+  <path d="M100 132 Q92 142 84 136" fill="none" stroke="#6e93ab" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M100 132 Q108 142 116 136" fill="none" stroke="#6e93ab" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- scarf -->
+  <path d="M52 148 Q100 166 148 148 L154 166 Q100 186 46 166 Z" fill="url(#scarf)"/>
+  <path d="M138 160 L160 190 L142 184 L132 194 L124 164 Z" fill="url(#scarf)" opacity=".95"/>
+  <path d="M58 156 Q100 170 142 156" fill="none" stroke="#dff8ff" stroke-width="2" opacity=".65"/>
+  <!-- snow accents -->
+  <g stroke="#8ff3ff" stroke-linecap="round" opacity=".9">
+    <path d="M36 40 L48 40 M42 34 L42 46 M38 36 L46 44 M46 36 L38 44" stroke-width="2"/>
+    <path d="M160 58 L170 58 M165 53 L165 63 M161 54 L169 62 M169 54 L161 62" stroke-width="2"/>
+    <path d="M168 102 L176 102 M172 98 L172 106" stroke-width="1.6"/>
+  </g>
+</svg>
